@@ -42,6 +42,17 @@ $tasks = [
     'result' => false
     ]
         ];
+        
+function num_tasks( $tasks_array, $cat_key) {
+  $num = 0;
+  
+  foreach ($tasks_array as $task) {
+      if ($task["cat"] === $cat_key) {
+        $num++;
+      }
+  }
+  return $num;
+}
 
 ?>
 <!DOCTYPE html>
@@ -94,7 +105,7 @@ $tasks = [
                         foreach ($categories as $categorie_name): ?>
                         <li class="main-navigation__list-item">
                             <a class="main-navigation__list-item-link" href="#"><?=$categorie_name; ?></a>
-                            <span class="main-navigation__list-item-count">0</span>
+                            <span class="main-navigation__list-item-count"><!--Вызываем функцию --><?php echo(num_tasks($tasks, $categorie_name));?></span>
                         </li>
                         <?php endforeach; ?>
                         
