@@ -91,15 +91,12 @@ $tasks = [
 
                         <?php 
                         // выводим категории меню
-                        $index = 0;
-                        $num = count($categories);
-                        while ($index < $num): ?>
+                        foreach ($categories as $categorie_name): ?>
                         <li class="main-navigation__list-item">
-                            <a class="main-navigation__list-item-link" href="#"><?=$categories[$index]; ?></a>
+                            <a class="main-navigation__list-item-link" href="#"><?=$categorie_name; ?></a>
                             <span class="main-navigation__list-item-count">0</span>
                         </li>
-                        <?php $index++; ?>
-                        <?php endwhile; ?>
+                        <?php endforeach; ?>
                         
                     </ul>
                 </nav>
