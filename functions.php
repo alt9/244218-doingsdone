@@ -44,4 +44,20 @@ function esc($str) {
 	return $text;
 }
 
+
+ // Разница в датах дедлайн - сейчас
+    function time_diff_calc($time_value) {
+        if ($time_value !== "Нет") {
+          $secs_in_hour = 3600; // секунд в 1 ч
+          $cur_date = time(); // этот момент
+          $end_date = strtotime($time_value); // конечная метка - дедлайн
+          $delta = floor(($end_date - $cur_date) / $secs_in_hour); // разница между датами
+          
+          return $delta;
+        } 
+        else {
+          return $time_value;
+        }
+    };
+
 ?>
