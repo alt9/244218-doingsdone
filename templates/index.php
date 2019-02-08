@@ -36,9 +36,15 @@
                 </div>
 
                 <table class="tasks">
+                    
                     <?php foreach ($tasks as $key => $value): ?>
-                     
-                    <tr class="tasks__item task <?php if ($value['result']): ?>task--completed<?php endif; ?>">
+                    
+                    <?php
+                    $dedline_time = htmlspecialchars($value["date"]);
+                    $time_diff = time_diff_calc($dedline_time);
+                    ?>
+
+                    <tr class="tasks__item task <?php if ($value['result']): ?>task--completed<?php endif; ?> <?php if ($time_diff != "Нет" and $time_diff <= 24): ?>task--important<?php endif; ?> ">
                     
                         <td class="task__select">
                             <label class="checkbox task__checkbox">
@@ -51,7 +57,7 @@
                             <a class="download-link" href="#">Home.psd</a>
                         </td>
 
-                        <td class="task__date"><?php echo htmlspecialchars($value['date']); ?></td>
+                        <td class="task__date"><?php echo ($dedline_time); ?></td>
                     </tr>
                     <?php endforeach; ?>
                     
