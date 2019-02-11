@@ -17,7 +17,7 @@ CREATE TABLE tasks (
  	result TINYINT DEFAULT 0,
  	name CHAR(128),
  	file CHAR(256),
- 	dedline_date TIMESTAMP,
+ 	deadline_date TIMESTAMP,
  	category_id CHAR,
  	user_id INT
 );
