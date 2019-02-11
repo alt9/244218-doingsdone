@@ -30,4 +30,4 @@ CREATE TABLE users (
  	password CHAR(128)
 );
 
-CREATE INDEX date ON tasks(dedline_date);
+CREATE INDEX date ON tasks(deadline_date);
