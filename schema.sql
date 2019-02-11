@@ -14,11 +14,11 @@ CREATE TABLE tasks (
  	id INT AUTO_INCREMENT PRIMARY_KEY,
  	create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
  	decided_date TIMESTAMP,
- 	result INT DEFAULT 0 CHECK (result=0 and result=1),
+ 	result TINYINT DEFAULT 0,
  	name CHAR(128),
  	file CHAR(256),
  	dedline_date TIMESTAMP,
- 	categorie_id CHAR,
+ 	category_id CHAR,
  	user_id INT
 );
 
