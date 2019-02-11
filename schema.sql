@@ -6,17 +6,20 @@ USE doingsdone;
 
 CREATE TABLE categories (
 	id INT AUTO_INCREMENT PRIMARY_KEY,
- 	name CHAR(128)
+ 	name CHAR(128),
+ 	user_id INT
 );
 
 CREATE TABLE tasks (
  	id INT AUTO_INCREMENT PRIMARY_KEY,
- 	сreate_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ 	create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
  	decided_date TIMESTAMP,
  	result INT DEFAULT 0 CHECK (result=0 and result=1),
  	name CHAR(128),
  	file CHAR(256),
- 	dedline_date TIMESTAMP
+ 	dedline_date TIMESTAMP,
+ 	categorie_name INT,
+ 	user_id INT
 );
 
 CREATE TABLE users (
