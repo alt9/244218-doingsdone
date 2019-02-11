@@ -18,7 +18,7 @@ CREATE TABLE tasks (
  	name CHAR(128),
  	file CHAR(256),
  	dedline_date TIMESTAMP,
- 	categorie_name INT,
+ 	categorie_id CHAR,
  	user_id INT
 );
 
@@ -27,7 +27,7 @@ CREATE TABLE users (
  	reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
  	email CHAR(128) NOT NULL UNIQUE,
  	username CHAR(128) NOT NULL UNIQUE,
- 	user_pass CHAR(128)
+ 	password CHAR(128)
 );
 
 CREATE INDEX date ON tasks(dedline_date);
