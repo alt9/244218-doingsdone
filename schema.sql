@@ -30,4 +30,8 @@ CREATE TABLE users (
  	password CHAR(128)
 );
 
-CREATE INDEX date ON tasks(deadline_date);
+CREATE UNIQUE INDEX user_email ON users(email);
+CREATE UNIQUE INDEX username ON users(username);
+CREATE INDEX deadline ON tasks(deadline_date);
+CREATE INDEX create ON tasks(create_date);
+CREATE INDEX decided ON tasks(decided_date);
