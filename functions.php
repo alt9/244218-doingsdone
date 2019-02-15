@@ -24,11 +24,11 @@ $show_complete_tasks = rand(0, 1);
 
 
 // расчет дедлайна задачи
-function num_tasks( $tasks_array, $cat_key) {
+function num_tasks($tasks_array, $cat_key) {
   $num = 0;
   
   foreach ($tasks_array as $task) {
-      if ($task["cat"] === $cat_key) {
+      if ($task["category_id"] === $cat_key) {
         $num++;
       }
   }
