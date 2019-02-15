@@ -45,10 +45,10 @@
 
                         <?php 
                         // выводим категории меню
-                        foreach ($categories as $categorie_name): ?>
+                        foreach ($categories as $category_name): ?>
                         <li class="main-navigation__list-item">
-                            <a class="main-navigation__list-item-link" href="#"><?php echo htmlspecialchars($categorie_name); ?></a>
-                            <span class="main-navigation__list-item-count"><!--Вызываем функцию --><?php echo(num_tasks($tasks, $categorie_name));?></span>
+                            <a class="main-navigation__list-item-link" href="#"><?php echo htmlspecialchars($category_name); ?></a>
+                            <span class="main-navigation__list-item-count"><!--Вызываем функцию --><?php echo(num_tasks($tasks, $category_name));?></span>
                         </li>
                         <?php endforeach; ?>
                         

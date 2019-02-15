@@ -31,7 +31,7 @@ CREATE TABLE users (
 );
 
 CREATE UNIQUE INDEX user_email ON users(email);
-CREATE UNIQUE INDEX username ON users(username);
+CREATE UNIQUE INDEX user_name ON users(username);
 CREATE INDEX deadline ON tasks(deadline_date);
-CREATE INDEX create ON tasks(create_date);
+CREATE INDEX created ON tasks(create_date);
 CREATE INDEX decided ON tasks(decided_date);
