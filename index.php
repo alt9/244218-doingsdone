@@ -8,7 +8,7 @@ mysqli_set_charset($con, 'utf-8');
 
 $categories_sql = 'SELECT * FROM categories';
 $categories = mysqli_query($con, $categories_sql);
-$tasks_sql = 'SELECT * FROM tasks';
+$tasks_sql = 'SELECT tasks.*, categories.id AS category_id FROM tasks LEFT JOIN categories ON categories.id = tasks.category_id';
 $tasks = mysqli_query($con, $tasks_sql);
 
 $page_content = include_template('index.php', ['tasks' => $tasks,

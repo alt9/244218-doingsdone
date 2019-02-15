@@ -40,7 +40,7 @@
                     <?php foreach ($tasks as $key => $value): ?>
                     
                     <?php
-                    $deadline_time = htmlspecialchars($value["date"]);
+                    $deadline_time = date('d.m.Y', strtotime($value["deadline_date"]));
                     $time_diff = time_diff_calc($deadline_time);
                     ?>
 
@@ -49,7 +49,7 @@
                         <td class="task__select">
                             <label class="checkbox task__checkbox">
                                 <input class="checkbox__input visually-hidden task__checkbox" type="checkbox" value="1" <?php if ($value['result']): ?>checked<?php endif; ?>>
-                                <span class="checkbox__text"><?php echo htmlspecialchars($value['task']); ?></span>
+                                <span class="checkbox__text"><?php echo htmlspecialchars($value['name']); ?></span>
                             </label>
                         </td>
 
